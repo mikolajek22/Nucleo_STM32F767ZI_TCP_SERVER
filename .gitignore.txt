@@ -1,0 +1,58 @@
+# Pliki binarne, obiekty i artefakty kompilacji
+*.o
+*.d
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
+*.srec
+
+# Foldery buildów
+/build/
+/Debug/
+/Release/
+/Output/
+/out/
+
+# Pliki zależności i tymczasowe
+*.dep
+*.su
+
+# Pliki logów
+*.log
+
+# Pliki backupu i tymczasowe (np. edytorów)
+*~
+*.swp
+*.tmp
+
+# Pliki linkera generowane automatycznie
+*.ld
+
+# Pliki konfiguracyjne OpenOCD (opcjonalnie, jeśli lokalne)
+openocd.cfg
+
+# Pliki IDE — jeśli używasz VS Code lub STM32CubeIDE i nie chcesz ich wersjonować:
+
+# VS Code
+.vscode/
+
+# STM32CubeIDE (opcjonalnie)
+.cproject
+.project
+.settings/
+*.launch
+
+# CMake — jeśli używasz CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Python/CLI narzędzia (jeśli używasz np. do skryptów upload/debug)
+__pycache__/
+*.pyc
+*.pyo
+.env/
+venv/
