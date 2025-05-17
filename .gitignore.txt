@@ -42,6 +42,11 @@ openocd.cfg
 .project
 .settings/
 *.launch
-
+# Foldery buildów (lepsze uogólnienie)
+**/build/
+**/Debug/
+**/Release/
+**/Output/
+**/out/
 
 
