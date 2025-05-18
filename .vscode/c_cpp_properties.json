@@ -8,14 +8,21 @@
                 "${workspaceFolder}/Drivers/STM32F7xx_HAL_Driver/Inc",
                 "${workspaceFolder}/Drivers/STM32F7xx_HAL_Driver/Inc/Legacy",
                 "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32F7xx/Include",
-                "${workspaceFolder}/Drivers/CMSIS/Include"
+                "${workspaceFolder}/Drivers/CMSIS/Include",
+                "${workspaceFolder}/LWIP/App/**",
+                "${workspaceFolder}/LWIP/Target/**",
+                "${workspaceFolder}/Middlewares/Third_Party/**",
+                "${workspaceFolder}/Middlewares/Third_Party/FreeRTOS/Source/**",
+                "${workspaceFolder}/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/"
+                
+
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
                 "_UNICODE",
                 "USE_HAL_DRIVER",
-                "STM32G474xx"
+                "STM32F767xx"
             ],
             "compilerPath": "C:\\MinGW\\bin\\gcc.exe",
             "cStandard": "c11",

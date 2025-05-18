@@ -26,6 +26,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "gpio.h"
+#include "tcp_app.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -61,6 +62,8 @@ osThreadId_t Ld1Blink;
 osThreadId_t Ld2Blink;
 osThreadId_t Ld3Blink;
 
+extern osThreadId_t TcpTaskHandle;
+
 const osThreadAttr_t Ld3Blink_attributes = {
   .name = "Ld3Blink",
   .stack_size = 128 * 4,
@@ -77,6 +80,7 @@ const osThreadAttr_t Ld1Blink_attributes = {
   .priority = (osPriority_t) osPriorityNormal,
 };
 
+extern const osThreadAttr_t TcpTask_attributes;
 
 void StartLd1Blink(void *argument);
 void StartLd2Blink(void *argument);
@@ -123,6 +127,8 @@ void MX_FREERTOS_Init(void) {
     Ld1Blink = osThreadNew(StartLd1Blink, NULL, &Ld1Blink_attributes);
     Ld2Blink = osThreadNew(StartLd2Blink, NULL, &Ld2Blink_attributes);
     Ld3Blink = osThreadNew(StartLd3Blink, NULL, &Ld3Blink_attributes);
+
+    
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */
@@ -143,6 +149,7 @@ void StartDefaultTask(void *argument)
   /* init code for LWIP */
   MX_LWIP_Init();
   /* USER CODE BEGIN StartDefaultTask */
+  TcpTaskHandle = osThreadNew(StartTcpTask, NULL, &TcpTask_attributes);
   /* Infinite loop */
   for(;;)
   {
